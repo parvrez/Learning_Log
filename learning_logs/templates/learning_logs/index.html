@@ -1,8 +1,32 @@
-{% extends 'learning_logs/base.html'%}
+{% extends 'learning_logs/base.html' %}
+{% load static %}
 
 {% block content %}
-<p>
-    Learning Log helps you to keep track of your learning,for any topic you are learning about.
-</p>
+
+{% if user.is_authenticated %}
+
+    {% if user.username == "Basheer Ali" %}
+        <h2>Hi vappa ❤️</h2>
+        <img src="{% static 'image/vappa.jpg' %}" alt="vappa" width="250">
+
+    {% elif user.username == "Ulfath Nisha" %}
+        <h2>Hi umma ❤️</h2>
+        <img src="{% static 'image/umma.jpg' %}" alt="umma" width="250">
+
+    {% elif user.username == "ik" %}
+        <h2>Hi mapla ❤️</h2>
+        <img src="{% static 'image/ik.jpg' %}" alt="ik" width="250">
+
+    {% else %}
+        <h2>Hi {{ user.username }} 👋</h2>
+    {% endif %}
+
+{% else %}
+
+    <p>
+        Learning Log helps you keep track of your learning for any topic you are learning about.
+    </p>
+
+{% endif %}
 
 {% endblock content %}
