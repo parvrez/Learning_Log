@@ -5,17 +5,26 @@
 
 {% if user.is_authenticated %}
 
-    {% if user.username == "Basheer Ali" %}
+    {% if user.username == "basheer" %}
         <h2>Hi vappa ❤️</h2>
-        <img src="{% static 'image/vappa.jpg' %}" alt="vappa" width="250">
+        <img src="{% static 'images/vappa.jpg' %}" alt="vappa" width="250">
 
-    {% elif user.username == "Ulfath Nisha" %}
+    {% elif user.username == "ulfath" %}
         <h2>Hi umma ❤️</h2>
-        <img src="{% static 'image/umma.jpg' %}" alt="umma" width="250">
+        <img src="{% static 'images/umma.jpg' %}" alt="umma" width="250">
+
+    {% elif user.username == "jafar" or user.username == "alif" %}
+        <h2>Hi baap ❤️</h2>
+        <img src="{% static 'images/bop.jpg' %}" alt="bop" width="250">
 
     {% elif user.username == "ik" %}
         <h2>Hi mapla ❤️</h2>
-        <img src="{% static 'image/ik.jpg' %}" alt="ik" width="250">
+        <img src="{% static 'images/ik.jpg' %}" alt="ik" width="250">
+
+    {% elif user.username == "ishore" %}
+        <h2>Hi mapla ❤️</h2>
+        <img src="{% static 'images/ik.jpg' %}" alt="ik" width="250">
+
 
     {% else %}
         <h2>Hi {{ user.username }} 👋</h2>
